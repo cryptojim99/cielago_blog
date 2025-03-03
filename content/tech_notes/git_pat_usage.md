@@ -105,9 +105,9 @@ To push code to a GitHub repository using a personal access token (PAT) from a L
 - Always keep your PAT secure and avoid sharing it.
 - If you encounter issues, ensure the token has the correct permissions and is not expired.
 
-Let me know if you need further assistance!
 
 
+## Trouble Shooting
 
 If you're still encountering an authentication error when trying to push code to GitHub using a personal access token (PAT), let's troubleshoot step by step. Here are some common issues and solutions:
 
@@ -217,6 +217,7 @@ If you're still encountering an authentication error when trying to push code to
 
 ### 10. **Alternative: Use SSH Instead of HTTPS**
    If you're still having trouble, consider using SSH instead of HTTPS for authentication:
+   
    - [Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and add it to your GitHub account.
    - Update the remote URL to use SSH:
 
