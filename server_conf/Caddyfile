@@ -25,7 +25,7 @@ blog.cielago.xyz {
     }
 
     log {
-        output file /var/log/caddy/my-static-site.log
+        output file /var/log/caddy/cielago_blog.log
     }
 
     header {
