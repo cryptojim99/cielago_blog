@@ -9,7 +9,7 @@
         {% for page in pages %}
             <li class="post">
                 <a href="{{ page.permalink }}">{{ page.title }}</a>
-                <span class="meta">{{ page.date | date(format="%Y-%m-%d") }}</span>
+                <span class="meta">{{ page.date | date(format="%Y-%m-%d") }} | {{ page.reading_time }} {{ config.extra.translations[lang][0].read_time }}</span>
             </li>
         {% endfor %}
     </ul>
