@@ -1,0 +1,37 @@
+# The Caddyfile is an easy way to configure your Caddy web server.
+#
+# Unless the file starts with a global options block, the first
+# uncommented line is always the address of your site.
+#
+# To use your own domain name (with automatic HTTPS), first make
+# sure your domain's A/AAAA DNS records are properly pointed to
+# this machine's public IP, then replace ":80" below with your
+# domain name.
+# Set this path to your site's directory.
+
+
+seed.cielago.xyz {
+    reverse_proxy 127.0.0.1:8080
+}
+radui.cielago.xyz {
+    reverse_proxy 127.0.0.1:3001
+}
+
+blog.cielago.xyz {
+    root /home/maclei/git/cielago_blog/public
+    encode gzip
+    file_server {
+        hide .git
+    }
+
+    log {
+        output file /var/log/caddy/my-static-site.log
+    }
+
+    header {
+        ?Cache-Control "max-age=1800"
+    }
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile
