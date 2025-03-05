@@ -38,12 +38,6 @@ Zellij
 
 ![Zellij](/imgs/zellij_screenshot.jpg)
 
-Co-located
-
-![Alt text for the image](./zellij_screenshot.png)
-![Alt text for the image](dysk_screenshot.jpg.png)
-
-
 ## References {#references}
 
 - [Terminal Trove](https://terminaltrove.com/)
