@@ -41,9 +41,8 @@ Describe the Pod: Use kubectl describe pod <pod-name> to check for errors or war
 
 Check Logs: Look at the container logs for any errors related to filesystem access.
 
-Exec into the Pod: Use kubectl exec -it <pod-name> -- /bin/sh to inspect the /tmp directory and its permissions.
+Exec into the Pod: Use ```kubectl exec -it <pod-name> -- /bin/sh``` to inspect the /tmp directory and its permissions.
 
-If the issue persists, provide more details about your pod specification and cluster configuration for further assistance.
 
 ## References
 
