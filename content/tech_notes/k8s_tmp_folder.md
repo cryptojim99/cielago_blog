@@ -1,5 +1,5 @@
 +++
-title = "pod with a writable /tmp volume"
+title = "K8s pod with a writable /tmp volume"
 date = "2025-03-05"
 template = "page.html"
 description = ""

@@ -1,6 +1,9 @@
 {% extends "index.html" %}
 
 {% block main_content %}
+
+<br>
+My collection of technical notes. Mostly for my own reference. So I don't forget or have to go and re-learn all over again. Much of this content is likely to be at least partially AI generated.
     {% set section = get_section(path="tech_notes/_index.md") %}
     {{ post_macros::list_title(pages=section.pages) }}
 {% endblock main_content %}
