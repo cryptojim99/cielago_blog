@@ -1,17 +1,22 @@
 /* Markdown */
 :root {
-  --maincolor: red;
+  --maincolor: rgb(13, 197, 160);
   --bordercl: rebeccapurple;
   --callouctcolor: dodgerblue;
   --hovercolor: navy;
   --darkMaincolor: #50fa7b;
+  --linkUnderline: #cccccc;
 }
 
 html {
   color: #232333;
-  font-family: "Roboto Mono", monospace;
+  /*font-family: "Roboto Mono", monospace;
+  font-family: 'Monaspace Argon', monospace;
+  font-family: 'Monaspace Krypton', monospace; */
+  font-family: 'Monaspace Neon', monospace;
   font-size: 15px;
   line-height: 1.6em;
+  font-weight: lighter;
 }
 
 body {
@@ -38,6 +43,45 @@ body {
   animation-delay: 0.15s;
 }
 
+/* Added by me 
+
+*/
+/* Style for normal hyperlinks */
+a {
+  color: black;
+  text-decoration: none; /* Optional: Remove underline */
+  border-bottom: 2px solid var(--linkUnderline); /* Optional: replace underline with border */
+}
+
+/* Style for hover state */
+a:hover {
+  color: inherit; /* Optional: Change color on hover */
+  text-decoration: none; /* Optional: Remove underline */
+  border-bottom: 2px solid purple; /* Optional: replace underline with border */
+}
+
+/* Style for active (clicked) hyperlinks */
+a:active {
+  color: #cccccc; /* Light grey color */
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+
+/*****/
+/* Links */
+/* a {
+  border-bottom: 2px solid var(--linkUnderline);
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: var(--hovercolor);
+  color: #fff;
+} */
+
+/* End added */
+
 ::selection {
   background: var(--maincolor);
   color: #fff;
@@ -61,16 +105,7 @@ blockquote {
   padding-left: 1em;
 }
 
-a {
-  border-bottom: 3px solid var(--maincolor);
-  color: inherit;
-  text-decoration: none;
-}
 
-a:hover {
-  background-color: var(--hovercolor);
-  color: #fff;
-}
 
 ul {
   list-style: none;
@@ -286,7 +321,7 @@ article .title {
 }
 
 .tags a {
-  border-bottom: 3px solid var(--maincolor);
+  border-bottom: 2px solid var(--maincolor);
 }
 
 .tags a:hover {
