@@ -2,7 +2,7 @@
 :root {
   --maincolor: rgb(13, 197, 160);
   --bordercl: rebeccapurple;
-  --callouctcolor: dodgerblue;
+  --calloutcolor: dodgerblue;
   --hovercolor: navy;
   --darkMaincolor: #50fa7b;
   --linkUnderline: #cccccc;
@@ -10,13 +10,14 @@
 
 html {
   color: #232333;
-  /*font-family: "Roboto Mono", monospace;
+  /* Github Monaspace fonts.
   font-family: 'Monaspace Argon', monospace;
   font-family: 'Monaspace Krypton', monospace; */
   font-family: 'Monaspace Neon', monospace;
   font-size: 15px;
   line-height: 1.6em;
   font-weight: lighter;
+  font-feature-settings: 'liga', 'dlig', 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08';
 }
 
 body {
@@ -292,7 +293,7 @@ article .title {
 
 /* Callout */
 .callout {
-  background-color: var(--callouctcolor);
+  background-color: var(--calloutcolor);
   color: #fff;
   padding: 1em;
 }
@@ -308,7 +309,7 @@ article .title {
 
 .callout a:hover {
   background-color: #fff;
-  color: var(--callouctcolor);
+  color: var(--calloutcolor);
 }
 
 .site-description {
