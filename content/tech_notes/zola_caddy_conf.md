@@ -80,4 +80,5 @@ journalctl -xeu caddy.service
 ## References
 
 - [How to serve a static site using Caddy](https://ellen.dev/serve-static-site-using-caddy.html). A more detailed explanation.
-- [Caddy File](https://caddyserver.com/docs/caddyfile) docs
+- [Caddy File Docs](https://caddyserver.com/docs/caddyfile)
+- [Caddy homepage](https://caddyserver.com/)
