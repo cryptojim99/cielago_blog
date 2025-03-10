@@ -23,7 +23,7 @@ The latest I've been using, is a series of fonts from Github called monspace, on
 
 Included with the new 1.200 [release](https://github.com/githubnext/monaspace/releases/tag/v1.200). Some examples :
 
-     ~/
+     ~/ 
 
 ## Using on web pages
 
