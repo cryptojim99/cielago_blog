@@ -10,7 +10,7 @@ tags = ["cli", "tools", "rust"]
 
 ## Overview
 
-Recently there has been a trend of rewriting or replacing common system cli tools in rust, and some outright completely new tools filling additional niches. Possibly because rust is such a great systems programming language, but also in some cases people are looking for a relatively simple project to learn rust, and so re-writing an existing tool is a relatively straightforward first project. As a result, while there are some truly excellent tools out there, there are just as many that have been quickly abandoned by their owners. below is the list of tools that I find myself installing on any new *nix* system, whether it's a remote host I use for dev, or a local WSL or MacOs instance. 
+Recently there has been a trend of rewriting or replacing common system cli tools in rust, and some outright completely new tools filling additional niches. Possibly because rust is such a great systems programming language, but also in some cases people are looking for a simple project to learn rust, and so re-writing an existing tool is a relatively straightforward first project. As a result, while there are some truly excellent tools out there, there are just as many that have been quickly abandoned by their owners. below is the list of tools that I find myself installing on any new *nix* system, whether it's a remote host I use for dev, or a local WSL or MacOs instance. 
 
 I'll attempt to update this as I make changes. But it will always remain *my* personal preferences. For a more objective summary of the available tools see the links in [References](#references)
 
