@@ -59,7 +59,7 @@ read_time = "minute read"
 all_tags = "All tags"
 menus = [
     { name = "Home", url = "/", weight = 2 },
-    { name = "All posts", url = "/posts", weight = 2 },
+    { name = "All Posts", url = "/posts", weight = 2 },
     { name = "About", url = "/about", weight = 3 },
     { name = "Tags", url = "/tags", weight = 4 },
     { name = "Tech Notes", url = "/tech_notes", weight = 5 },

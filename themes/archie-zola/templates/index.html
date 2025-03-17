@@ -4,7 +4,7 @@
 <html lang="{{lang}}">
 {% include "partials/header.html" %}
 
-<body>
+<body class="{% block body_class %}{% endblock %}">
     <div class="content">
         {% include "partials/head.html" %}
 

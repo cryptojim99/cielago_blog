@@ -167,4 +167,5 @@ your-zola-project/
   - [Monoid](https://larsenwork.com/monoid/)
   - FiraCode, CaskaydiaCove at [NerdFonts](https://www.nerdfonts.com/)
   - The original [Cascadia Code](https://devblogs.microsoft.com/commandline/cascadia-code-2404-23/) from microsoft, which now *also* includes Nerd Fonts
-- And [Programming Fonts](https://www.programmingfonts.org/) - the mother lode 
+  - [MonaLisa](https://www.monolisa.dev/) - a commercial font, designed specifically for developers. Looks great - on their website at least, but I've not had a chance to try it out yet.
+- And [Programming Fonts](https://www.programmingfonts.org/) - the mother lode. A great side for viewing and comparing different programming fonts. Free and opensource only.
