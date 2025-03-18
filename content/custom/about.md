@@ -10,9 +10,15 @@ tags = ["Personal"]
 
 Experienced software engineer based in Tokyo Japan. 
 
+Why Cielago ? - Dune fans may remember that a Cielago is a :
+
+> Furry bat of Arrakis trained for communication by the Fremen. The individual tamed bats carry coded messages implemented with the use of distrans technology.
+
+No particular meaning attached - I just mostly liked the way the word sounds.
+
 ## Blogs I like
 
-Caveat that - as with anything on the web these may well get stale.
+With the caveat that - as with anything on the web these may well get stale.
 
 - [Julia Evans](https://jvns.ca/) - interesting programming stuff inc terminal observations
 - [Simon Willison](https://simonwillison.net/) blogging about ai, llms and [llm](https://llm.datasette.io/en/stable/) a very cool python library for interacting with LLMs.

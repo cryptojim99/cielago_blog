@@ -43,7 +43,7 @@ subtitle = "Technical blog covering various topics, including finance, crypto, d
 favicon = "/icon/favicon.png"
 
 # show in the footer
-copyright = "Ian"
+copyright = "OldMate"
 
 [extra.translations]
 languages = [{name = "en", url = "/"}]
