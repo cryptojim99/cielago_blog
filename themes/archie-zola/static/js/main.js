@@ -23,4 +23,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial update
     window.dispatchEvent(new Event('scroll'));
   }
+  
+  // Table of Contents toggle functionality
+  const tocHeaders = document.querySelectorAll('.toc-header');
+  
+  tocHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      // Find the content element that follows this header
+      const content = this.nextElementSibling;
+      const toggleIcon = this.querySelector('.toc-toggle-icon');
+      
+      // Toggle the collapsed class
+      content.classList.toggle('collapsed');
+      
+      // Update the toggle icon
+      if (content.classList.contains('collapsed')) {
+        toggleIcon.textContent = '▶';
+        toggleIcon.style.transform = 'rotate(0deg)';
+      } else {
+        toggleIcon.textContent = '▼';
+        toggleIcon.style.transform = 'rotate(90deg)';
+      }
+    });
+  });
 });
