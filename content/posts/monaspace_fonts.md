@@ -28,7 +28,7 @@ Monaspace fonts also handle similar-looking characters with better differentiati
 
 Included with the new 1.200 [release](https://github.com/githubnext/monaspace/releases/tag/v1.200). Some examples:
 
-     ~/ 
+         main !1 ?1 
 
 ## Using on web pages
 
