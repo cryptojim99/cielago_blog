@@ -1,14 +1,21 @@
 /* Markdown */
 :root {
-  --maincolor: rgb(13, 197, 160);
+  --maincolor: rgb(13, 180, 150);
+  --secondarycolor: #8a4fff;
   --bordercl: rebeccapurple;
   --calloutcolor: dodgerblue;
-  --hovercolor: navy;
-  --darkMaincolor: #50fa7b;
+  --hovercolor: #3f51b5;
+  --darkMaincolor: #42d66b; /* Less saturated than the previous #50fa7b */
+  --darkSecondarycolor: #bd93f9;
   --linkUnderline: #cccccc;
   --scroll-progress: 0%;
   --toc-bg: #f8f8f8;
   --toc-border: #e0e0e0;
+  
+  /* Layout variables */
+  --content-max-width: 850px; /* Increased from 800px */
+  --heading-spacing: 2.5em; /* Increased spacing before headings */
+  --paragraph-spacing: 1.6em; /* Spacing between paragraphs */
 }
 
 /* Scroll Progress Indicator */
@@ -32,14 +39,12 @@
 
 html {
   color: #232333;
-  /* Github Monaspace fonts.
-  font-family: 'Monaspace Argon', monospace;
-  font-family: 'Monaspace Krypton', monospace; */
-  font-family: 'Monaspace Neon', monospace;
+  /* Primary font with fallbacks */
+  font-family: 'Monaspace Neon', 'Cascadia Code', 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Monaco, Consolas, monospace;
   font-size: 15px;
   line-height: 1.6em;
-  font-weight: lighter;
-  font-feature-settings: 'cv02', 'liga', 'dlig', 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'cv62', 'case';
+  font-weight: 300;
+  font-feature-settings: 'cv02', 'liga', 'dlig', 'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'cv62', 'case';
 }
 
 body {
@@ -66,27 +71,33 @@ body {
   animation-delay: 0.15s;
 }
 
-/* Added by me 
-
-*/
-/* Style for normal hyperlinks */
+/* Links with improved styling */
 a {
-  color: black;
-  text-decoration: none; /* Optional: Remove underline */
-  border-bottom: 2px solid var(--linkUnderline); /* Optional: replace underline with border */
+  color: inherit;
+  text-decoration: none; 
+  border-bottom: 2px solid var(--linkUnderline);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  padding: 0 2px;
 }
 
-/* Style for hover state */
+/* Style for hover state with subtle background color */
 a:hover {
-  color: inherit; /* Optional: Change color on hover */
-  text-decoration: none; /* Optional: Remove underline */
-  border-bottom: 2px solid purple; /* Optional: replace underline with border */
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid var(--secondarycolor);
+  background-color: rgba(138, 79, 255, 0.07);
 }
 
 /* Style for active (clicked) hyperlinks */
 a:active {
-  color: #cccccc; /* Light grey color */
-  text-decoration: underline; /* Optional: Add underline on hover */
+  color: #cccccc;
+  text-decoration: none;
+}
+
+/* Style for focus state for accessibility */
+a:focus {
+  outline: 2px solid var(--secondarycolor);
+  outline-offset: 2px;
 }
 
 
@@ -124,8 +135,10 @@ hr {
 blockquote {
   border-left: 3px solid var(--bordercl);
   color: #737373;
-  margin: 0;
-  padding-left: 1em;
+  margin: 0.5em 0 1.5em 0;
+  padding: 0.5em 0 0.5em 1em;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 0 3px 3px 0;
 }
 
 
@@ -184,10 +197,13 @@ code {
 }
 
 pre {
-  background-color: #ececec;
+  background-color: #f3f3f3;
   line-height: 1.4;
   overflow-x: auto;
   padding: 1em;
+  border-radius: 3px;
+  margin: 1.5em 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .highlight pre ::selection {
@@ -207,8 +223,8 @@ pre code {
   margin-bottom: 4em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
-  padding: 0 1ch;
+  max-width: var(--content-max-width);
+  padding: 0 2ch;
   word-wrap: break-word;
 }
 
@@ -224,24 +240,53 @@ header .main {
   font-size: 1.5rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Header differentiation by size */
+h1 {
+  font-size: 1.7rem;
+  margin-top: var(--heading-spacing);
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: var(--heading-spacing);
+  margin-bottom: 0.9em;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: var(--heading-spacing);
+  margin-bottom: 0.8em;
+}
+
+h4 {
   font-size: 1.2rem;
   margin-top: 2em;
+  margin-bottom: 0.7em;
+}
+
+h5 {
+  font-size: 1.1rem;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+h6 {
+  font-size: 1rem;
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
 }
 
 h1::before {
   color: var(--maincolor);
   content: "# ";
+  font-weight: bold;
 }
 
 h2::before {
   color: var(--maincolor);
   content: "## ";
+  font-weight: bold;
 }
 
 h3::before {
@@ -318,6 +363,8 @@ article .title {
   background-color: var(--calloutcolor);
   color: #fff;
   padding: 1em;
+  border-radius: 3px;
+  margin: 1.5em 0;
 }
 
 .callout p {
@@ -547,11 +594,36 @@ table td {
 
 .toc-list {
   margin: 0;
-  padding-left: 1em;
+  padding-left: 0.5em;
+  list-style: none;
 }
 
 .toc-list li {
   margin: 0.5em 0;
+  text-indent: 0;
+}
+
+.toc-list li::before {
+  content: "";
+}
+
+.toc-list ul {
+  padding-left: 1.5em;
+  list-style: none;
+}
+
+.toc-hash {
+  color: var(--maincolor);
+  font-weight: bold;
+  margin-right: 0.3em;
+}
+
+.toc-item.toc-h2 .toc-hash {
+  color: var(--secondarycolor);
+}
+
+.toc-item.toc-h3 .toc-hash {
+  opacity: 0.8;
 }
 
 .toc-list a {
@@ -559,6 +631,8 @@ table td {
   color: inherit;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease;
+  display: inline-block;
+  line-height: 1.3;
 }
 
 .toc-list a:hover {

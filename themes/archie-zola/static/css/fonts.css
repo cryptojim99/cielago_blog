@@ -52,31 +52,36 @@
 
 @font-face {
   font-family: 'Monaspace Neon';
-  src: url('/fonts/MonaspaceNeon-Regular.woff2') format('woff2');
-  src: url('/fonts/MonaspaceNeon-Regular.woff') format('woff');
+  src: url('../../../static/fonts/MonaspaceNeon-Regular.woff2') format('woff2'),
+       url('../../../static/fonts/MonaspaceNeon-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Monaspace Neon';
-  src: url('/fonts/MonaspaceNeon-Bold.woff2') format('woff2');
-  src: url('/fonts/MonaspaceNeon-Bold.woff') format('woff');
+  src: url('../../../static/fonts/MonaspaceNeon-Medium.woff2') format('woff2'),
+       url('../../../static/fonts/MonaspaceNeon-Medium.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Monaspace Neon';
-  src: url('/fonts/MonaspaceNeon-Italic.woff2') format('woff2');
-  src: url('/fonts/MonaspaceNeon-Italic.woff') format('woff');
+  src: url('../../../static/fonts/MonaspaceNeon-LightItalic.woff2') format('woff2'),
+       url('../../../static/fonts/MonaspaceNeon-LightItalic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
+
 @font-face {
   font-family: 'Monaspace Neon';
-  src: url('/fonts/MonaspaceNeon-Light.woff2') format('woff2');
-  src: url('/fonts/MonaspaceNeon-Light.woff') format('woff');
-  font-weight: light;
+  src: url('../../../static/fonts/MonaspaceNeon-Light.woff2') format('woff2'),
+       url('../../../static/fonts/MonaspaceNeon-Light.woff') format('woff');
+  font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }

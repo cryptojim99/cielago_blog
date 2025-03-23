@@ -108,20 +108,20 @@
                 <div class="toc-content collapsed">
                     <ul class="toc-list">
                         {% for h1 in page.toc %}
-                            <li>
-                                <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                            <li class="toc-item toc-h1">
+                                <a href="{{ h1.permalink | safe }}"><span class="toc-hash">#</span> {{ h1.title }}</a>
                                 {% if h1.children %}
                                     <ul>
                                         {% for h2 in h1.children %}
-                                            <li>
-                                                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                            <li class="toc-item toc-h2">
+                                                <a href="{{ h2.permalink | safe }}"><span class="toc-hash">##</span> {{ h2.title }}</a>
                                             </li>
 
                                             {% if h2.children %}
                                                 <ul>
                                                     {% for h3 in h2.children %}
-                                                        <li>
-                                                            <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                                        <li class="toc-item toc-h3">
+                                                            <a href="{{ h3.permalink | safe }}"><span class="toc-hash">###</span> {{ h3.title }}</a>
                                                         </li>
                                                     {% endfor %}
                                                 </ul>

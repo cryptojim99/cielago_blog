@@ -1,17 +1,17 @@
 body {
     color: white;
-    background-color: #202124;
+    background-color: #1e1e2e;
 }
 
 ::-moz-selection {
-    background: blue;
-    color: #fff;
+    background: var(--darkMaincolor);
+    color: #1e1e2e;
     text-shadow: none;
 }
 
 ::selection {
-    background: red;
-    color: #fff;
+    background: var(--darkMaincolor);
+    color: #1e1e2e;
     text-shadow: none;
 }
 
@@ -20,21 +20,27 @@ hr {
 }
 
 code {
-    background-color: lightblue;
-    color: black;
+    background-color: #334155;
+    color: #f8f8f2;
     text-decoration: bold;
     padding: 0.1em 0.2em;
+    border-radius: 2px;
 }
 
 pre {
-    background-color: #272822;
+    background-color: #272832;
     line-height: 1.4;
     overflow-x: auto;
     padding: 1em;
+    border-radius: 3px;
+    margin: 1.5em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 blockquote {
-    border-color: blue;
+    border-color: var(--darkMaincolor);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0 3px 3px 0;
 }
 
 h1,
@@ -77,30 +83,40 @@ h6::before {
 }
 
 a {
-    border-bottom: 3px solid var(--darkMaincolor);
+    border-bottom: 2px solid var(--darkMaincolor);
     color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    padding: 0 2px;
 }
 
 a:hover {
-    background-color: var(--darkMaincolor);
-    color: black;
+    background-color: rgba(66, 214, 107, 0.15);
+    color: white;
+    border-bottom: 2px solid var(--darkSecondarycolor);
+}
+
+a:focus {
+    outline: 2px solid var(--darkSecondarycolor);
+    outline-offset: 2px;
 }
 
 .site-description a {
-    color: #ddd;
+    color: #eee;
 }
 
 .site-description a:hover {
-    color: black;
+    color: white;
 }
 
 .tags a {
-    border-bottom: 3px solid var(--darkMaincolor);
+    border-bottom: 2px solid var(--darkMaincolor);
 }
 
 .tags a:hover {
-    background-color: var(--darkMaincolor);
-    color: black;
+    background-color: rgba(66, 214, 107, 0.15);
+    color: white;
+    border-bottom: 2px solid var(--darkSecondarycolor);
 }
 
 .site-title a {
@@ -114,16 +130,49 @@ a:hover {
 }
 
 .highlight {
-    background-color: #333;
+    background-color: #272832;
 }
 
 .soc:hover {
-    color: black;
+    color: white;
+    background-color: rgba(66, 214, 107, 0.15);
 }
 
 .draft-label {
     color: var(--darkMaincolor);
-    background-color: blue;
+    background-color: #334155;
+    border-radius: 3px;
+}
+
+/* TOC in dark mode */
+.toc-container {
+    background-color: #2a2a3c;
+    border-color: #444;
+}
+
+.toc-header:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.toc-toggle-icon {
+    color: var(--darkMaincolor);
+}
+
+.toc-hash {
+    color: var(--darkMaincolor);
+}
+
+.toc-item.toc-h2 .toc-hash {
+    color: var(--darkSecondarycolor);
+}
+
+.toc-item.toc-h3 .toc-hash {
+    opacity: 0.9;
+}
+
+.toc-list a:hover {
+    border-bottom-color: var(--darkMaincolor);
+    background-color: rgba(66, 214, 107, 0.05);
 }
 
 .highlight pre code[class=language-javaScript]::before,
