@@ -94,6 +94,7 @@
     {% endif %}
 
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="css/main.css") }} />
+    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="css/search.css") }} />
 
     {% if config.extra.mode == "auto" or config.extra.mode == "dark" or config.extra.mode == "toggle" %}
         <link
@@ -122,5 +123,9 @@
 
     <!-- Main JS for scroll progress indicator -->
     <script src={{ get_url(path="js/main.js") }}></script>
+
+    <!-- Search functionality -->
+    <script src={{ get_url(path="elasticlunr.min.js") }}></script>
+    <script src={{ get_url(path="js/search.js") }}></script>
 
 </head>

@@ -23,4 +23,24 @@ This file records architectural and implementation decisions using a list format
   - activeContext.md
   - progress.md
   - decisionLog.md
+
+[2025-03-25 09:17:10] - Added decision regarding content organization and theme customization
+
+## Decision
+
+* Implement search functionality for the blog
+* Use Monaspace fonts for code display
+* Organize content into posts and tech_notes sections
+
+## Rationale
+
+* Search functionality improves content discoverability
+* Monaspace fonts provide better readability for code snippets
+* Separate content organization allows for different types of technical writing
+
+## Implementation Details
+
+* Added search.js and search.css files
+* Imported Monaspace font files
+* Created separate templates and sections for different content types
   - systemPatterns.md

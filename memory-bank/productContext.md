@@ -7,6 +7,30 @@ This file provides a high-level overview of the project and the expected product
 
 ## Project Goal
 
+* Maintain a personal technical blog using Zola static site generator
+* Document technical notes, programming tips, and software development experiences
+* Showcase professional skills and knowledge in a clean, accessible format
+
+## Key Features
+
+* Zola static site generator for fast, efficient site building
+* Archie-Zola theme for clean, minimalist design
+* Content organized into posts and tech_notes sections
+* Custom fonts (Monaspace) for improved code display
+## Overall Architecture
+
+* Content-driven architecture with separate directories for posts and tech_notes
+* Theme customization based on archie-zola theme
+* Static assets including custom fonts and images
+
+[2025-03-25 09:13:30] - Updated project goals, key features, and overall architecture based on current project state and content.
+* Server configuration for deployment (Caddy server)
+* Search functionality implementation
+
+* Markdown-based content with front matter for metadata
+
+## Project Goal
+
 *   
 
 ## Key Features
