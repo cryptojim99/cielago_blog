@@ -21,6 +21,26 @@ Don't make it too verbose.
 Cost : 1.70
 Time - 30mins.
 
+## Search bar
+
+24 March 
+
+As an accomplished web developer with excellent design sense implement a search widget for this blog.
+
+- use elasticlunr for index building - as documented at https://www.getzola.org/documentation/content/search/
+- add an unobtrusive search icon to the left of the light / dark mode selector
+- clicking on the icon should make a minimalist search widget available to the right of the icon. 
+- Then typing into the search bar works as is normal for a zola blog.
+- for extra points, think
+- present a proposal and ideally a screenshot / mockup before applying any code changes.
+
+- this post might be a useful reference https://adrianstobbe.com/posts/zola-searchbar/
+
+Do Not hallucinate 
+
+## Template
+
+Do Not hallucinate 
 # Scratch
 
 
