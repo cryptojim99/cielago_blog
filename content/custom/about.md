@@ -24,7 +24,7 @@ With the caveat that - as with anything on the web these may well get stale.
 - [Simon Willison](https://simonwillison.net/) blogging about ai, llms and [llm](https://llm.datasette.io/en/stable/) a very cool python library for interacting with LLMs.
 - Kris Machowski - at [machow.ski](https://www.machow.ski/) Fantastic set of posts on markets fundamentals - orderbooks, positions, derivatives, that sort of thing. It's a shame he stopped posting ...
 - [Stephen Turner](https://blog.stephenturner.us) LLMs, python, DNA sequencing
-- [Addy Osmani](https://addyo.substack.com/)
+- [Addy Osmani](https://addyo.substack.com/). Author and engineer working at google. Prolific writer, and has some great posts on ai assisted coding. Homepage [here](https://addyosmani.com/).
 - [Andrej Karpathy](https://x.com/karpathy), OpenAI co-founder of Open AI and coiner of the term "Vibe Coding" :)
 - [Luigi Battistoni](https://medium.com/@lu.battistoni)'s Blog. and related [Github](https://github.com/Peropero0/quantitative_finance_playground) project with code for all of the articles.
 - [Matthew Buttericks](https://matthewbutterick.com/chron/) blog. He's also the author of [Practical Typography](https://practicaltypography.com/) and [Beautiful Racket](http://beautifulracket.com/) and the creator of [Pollen](https://docs.racket-lang.org/pollen/).

@@ -144,8 +144,9 @@ class Search {
     
     setTimeout(() => {
       this.searchInput.focus();
-      this.searchResults.style.opacity = '1';
-      this.searchResults.style.visibility = 'visible';
+      // Don't show results panel until there are results
+      this.searchResults.style.opacity = '0';
+      this.searchResults.style.visibility = 'hidden';
     }, 100);
 
     document.body.style.overflow = 'hidden';
@@ -294,20 +295,26 @@ class Search {
       this.searchResults.style.visibility = 'visible';
     }
   }
-
-  displayResults(results) {
-    this.searchResultsItems.innerHTML = '';
+displayResults(results) {
+  this.searchResultsItems.innerHTML = '';
+  
+  // Limit to top 8 results
+  const displayResults = results.slice(0, 8);
+  let firstLink = null;
+  
+  displayResults.forEach((result, index) => {
+    const resultItem = document.createElement('div');
+    resultItem.className = 'search-results__item';
     
-    // Limit to top 8 results
-    const displayResults = results.slice(0, 8);
+    const link = document.createElement('a');
+    // Convert localhost URLs to relative paths
+    const url = new URL(result.ref);
+    link.href = url.pathname;
     
-    displayResults.forEach(result => {
-      const resultItem = document.createElement('div');
-      resultItem.className = 'search-results__item';
-      
-      const link = document.createElement('a');
-      // Convert localhost URLs to relative paths
-      const url = new URL(result.ref);
+    // Store reference to first link
+    if (index === 0) {
+      firstLink = link;
+    }
       link.href = url.pathname;
       
       // Get the document from the store
@@ -337,6 +344,14 @@ class Search {
     // Show results with transition
     this.searchResults.style.opacity = '1';
     this.searchResults.style.visibility = 'visible';
+
+    // Focus the first result if available
+    if (firstLink) {
+      // Small delay to ensure the focus works after the transition
+      setTimeout(() => {
+        firstLink.focus();
+      }, 100);
+    }
   }
 }
 

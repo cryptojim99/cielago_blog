@@ -9,6 +9,8 @@ draft = true
 tags = [ "terminal", "tools" ]
 +++
 
+![Banner](/imgs/terminal-dude.png)
+
 # Introduction
 
 Many developers tend to be particular about their choice of tools and terminal setup in particular is something that people like to tweak and get just-right. I guess I'm no different, and while you can find any number of similar - 'This is my terminal setup' posts around the web, this is mine to add to the pile :).
@@ -250,4 +252,4 @@ TODO: Write conclusion
 
 # References
 
-TODO: add links
+- [reckoning.dev's post](https://reckoning.dev/blog/fish-shell) on migrating from zsh to fish shell.

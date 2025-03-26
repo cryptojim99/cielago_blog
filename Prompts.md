@@ -53,12 +53,23 @@ Do Not hallucinate
 Time taken :
 Cost :
 
+## Search Bar part 3
+
+As an accomplished web developer with excellent design sense
+
+the search results panel shows as a thin line below the search widget before the user has typed anything. It should be completely invisible at this time. ie - only appearing once there is content to show in it. see screenshot
+
+Secondly, while the keyboard support for arrowing up and down int he results list is excellent, the first search result isn't automatically given focus when the user types. This means they need to use the mouse to click into the results ( or tab via the keyboard ), before using the arrov keys. The first result should be highlighted automatically
+
 ## Template
 
 
 As an accomplished web developer with excellent design sense
 
+Use web design and css best practices
+
 Do Not hallucinate 
+
 
 Time taken :
 Cost :

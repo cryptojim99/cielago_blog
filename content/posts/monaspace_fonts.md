@@ -8,6 +8,7 @@ description = "An overview of GitHub's Monaspace font family and how to use them
 tags = [ "fonts", "github", "css" ]
 +++ 
 
+![Banner](/imgs/glyphs_in_landscape.webp)
 
 I've always been a bit of a font nerd. Especially once more fixed width coding fonts came out like [Consolas](https://learn.microsoft.com/en-us/typography/font-list/consolas), but even more now that we have things like ligatures, nerd fonts, powerline fonts, etc. 
 
@@ -172,3 +173,5 @@ your-zola-project/
   - The original [Cascadia Code](https://devblogs.microsoft.com/commandline/cascadia-code-2404-23/) from Microsoft, which now *also* includes Nerd Fonts
   - [MonaLisa](https://www.monolisa.dev/) - a commercial font, designed specifically for developers. Looks great - on their website at least, but I've not had a chance to try it out yet.
 - And [Programming Fonts](https://www.programmingfonts.org/) - the mother lode. A great site for viewing and comparing different programming fonts. Free and opensource only.
+
+![Footer](/imgs/glyphs-and-sprites.webp)

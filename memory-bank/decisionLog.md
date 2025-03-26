@@ -44,3 +44,7 @@ This file records architectural and implementation decisions using a list format
 * Imported Monaspace font files
 * Created separate templates and sections for different content types
   - systemPatterns.md
+
+[2025-03-27 00:14:30] - Search UI Improvements:
+- Modified search results panel to be completely hidden until results are available
+- Implemented automatic focus on first search result for better keyboard navigation
