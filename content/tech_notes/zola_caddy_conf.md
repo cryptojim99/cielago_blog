@@ -17,7 +17,7 @@ Key steps:
     - Create a Caddyfile: 
 
 
-```caddy
+```json
 yourdomain.com {
     root /path/to/zola/output_directory
     file_server

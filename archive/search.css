@@ -221,22 +221,6 @@
   line-height: 1.4;
 }
 
-/* Highlighted text */
-.search-results__highlight {
-  background-color: rgba(100, 149, 237, 0.15); /* Cornflower blue with low opacity */
-  color: var(--color); /* Use the main text color instead of accent color */
-  font-weight: 500;
-  border-radius: 2px;
-  padding: 0 2px;
-}
-
-/* Dark mode override */
-@media (prefers-color-scheme: dark) {
-  .search-results__highlight {
-    background-color: rgba(100, 149, 237, 0.2); /* Slightly higher opacity for dark mode */
-  }
-}
-
 /* No results message */
 .search-results__empty {
   padding: 16px;

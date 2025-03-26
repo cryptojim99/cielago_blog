@@ -18,7 +18,6 @@ class Search {
     this.searchBackdrop = document.querySelector('.search-backdrop');
     this.isActive = false;
     this._searchTimeout = null;
-    this.currentQuery = '';
 
     // Check if all required elements are found
     if (!this.searchWrapper || !this.searchResults || !this.searchResultsItems ||
@@ -76,7 +75,6 @@ class Search {
     this.searchBackdrop.addEventListener('click', this.hideSearch.bind(this));
     this.searchInput.addEventListener('input', this.onSearchInput.bind(this));
     this.searchInput.addEventListener('keydown', this.onKeyDown.bind(this));
-    this.searchResults.addEventListener('keydown', this.onKeyDown.bind(this));
 
     // Close on escape key
     document.addEventListener('keydown', (e) => {
@@ -92,42 +90,29 @@ class Search {
   }
 
   onKeyDown(e) {
-    const items = this.searchResultsItems.querySelectorAll('.search-results__item a');
-    if (!items.length) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      const items = this.searchResultsItems.querySelectorAll('.search-results__item a');
+      if (!items.length) return;
 
-    const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
-    let nextIndex = currentIndex;
+      const currentIndex = Array.from(items).findIndex(item => item === document.activeElement);
+      let nextIndex;
 
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault();
+      if (e.key === 'ArrowDown') {
         nextIndex = currentIndex < items.length - 1 ? currentIndex + 1 : 0;
-        items[nextIndex].focus();
-        break;
-
-      case 'ArrowUp':
-        e.preventDefault();
+      } else {
         nextIndex = currentIndex > 0 ? currentIndex - 1 : items.length - 1;
-        items[nextIndex].focus();
-        break;
+      }
 
-      case 'Enter':
-        if (document.activeElement === this.searchInput && items.length) {
-          e.preventDefault();
-          items[0].focus();
-        }
-        break;
+      items[nextIndex].focus();
+    }
 
-      case 'Tab':
-        // Allow normal tab behavior but ensure focus stays within the search modal
-        if (e.shiftKey && document.activeElement === this.searchInput) {
-          e.preventDefault();
-          items[items.length - 1].focus();
-        } else if (!e.shiftKey && document.activeElement === items[items.length - 1]) {
-          e.preventDefault();
-          this.searchInput.focus();
-        }
-        break;
+    if (e.key === 'Enter' && document.activeElement === this.searchInput) {
+      const firstItem = this.searchResultsItems.querySelector('.search-results__item a');
+      if (firstItem) {
+        e.preventDefault();
+        firstItem.focus();
+      }
     }
   }
 
@@ -169,75 +154,8 @@ class Search {
     document.body.style.overflow = '';
   }
 
-  highlightText(text, query) {
-    if (!text) return '';
-    if (!query) return text;
-
-    const words = query.trim().toLowerCase().split(/\s+/);
-    let result = text;
-    
-    words.forEach(word => {
-      if (word.length < 2) return;
-      const regex = new RegExp(`(${word})`, 'gi');
-      result = result.replace(regex, '<span class="search-results__highlight">$1</span>');
-    });
-
-    return result;
-  }
-
-  getSnippet(text, query, length = 150) {
-    if (!text) return '';
-    if (text.length <= length) return text;
-
-    const words = query.trim().toLowerCase().split(/\s+/);
-    const textLower = text.toLowerCase();
-    
-    // Find the first match position
-    let matchPos = -1;
-    for (const word of words) {
-      if (word.length < 2) continue;
-      const pos = textLower.indexOf(word);
-      if (pos !== -1) {
-        matchPos = pos;
-        break;
-      }
-    }
-
-    // If no match found, use the middle of the text
-    if (matchPos === -1) {
-      const middle = Math.floor(length / 2);
-      const start = text.lastIndexOf(' ', middle);
-      const end = text.indexOf(' ', middle + length/2);
-      const snippetStart = start > 0 ? start : 0;
-      const snippetEnd = end > 0 ? end : length;
-      return text.substring(snippetStart, snippetEnd) + '...';
-    }
-
-    // Get text around the match
-    const snippetStart = Math.max(0, matchPos - length/2);
-    const snippetEnd = Math.min(text.length, matchPos + length/2);
-    let snippet = text.substring(snippetStart, snippetEnd);
-
-    // Ensure we start and end at word boundaries
-    if (snippetStart > 0) {
-      const firstSpace = snippet.indexOf(' ');
-      if (firstSpace > 0) {
-        snippet = '...' + snippet.substring(firstSpace + 1);
-      }
-    }
-    if (snippetEnd < text.length) {
-      const lastSpace = snippet.lastIndexOf(' ');
-      if (lastSpace !== -1) {
-        snippet = snippet.substring(0, lastSpace) + '...';
-      }
-    }
-
-    return snippet;
-  }
-
   performSearch() {
     const query = this.searchInput.value.trim();
-    this.currentQuery = query;
     
     if (!query || query.length < 2) {
       this.searchResults.style.opacity = '0';
@@ -319,14 +237,14 @@ class Search {
 
       const title = document.createElement('div');
       title.className = 'search-results__title';
-      title.innerHTML = this.highlightText(doc.title || url.pathname.split('/').pop() || 'Untitled', this.currentQuery);
+      title.textContent = doc.title || url.pathname.split('/').pop() || 'Untitled';
       
       const description = document.createElement('div');
       description.className = 'search-results__description';
       
-      // Get a snippet of text around the matches
-      const snippet = this.getSnippet(doc.body, this.currentQuery, 150);
-      description.innerHTML = this.highlightText(snippet, this.currentQuery);
+      // Get a snippet of text around the first match
+      const snippet = this.getSnippet(doc.body, 150);
+      description.textContent = snippet;
       
       link.appendChild(title);
       link.appendChild(description);
@@ -337,6 +255,24 @@ class Search {
     // Show results with transition
     this.searchResults.style.opacity = '1';
     this.searchResults.style.visibility = 'visible';
+  }
+
+  getSnippet(text, length) {
+    if (!text) return '';
+    
+    // If text is shorter than desired length, return it all
+    if (text.length <= length) return text;
+    
+    // Find a good breaking point near the middle
+    const middle = Math.floor(length / 2);
+    const start = text.lastIndexOf(' ', middle);
+    const end = text.indexOf(' ', middle + length/2);
+    
+    // If we can't find good break points, just cut at length
+    const snippetStart = start > 0 ? start : 0;
+    const snippetEnd = end > 0 ? end : length;
+    
+    return text.substring(snippetStart, snippetEnd) + '...';
   }
 }
 

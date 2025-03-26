@@ -43,7 +43,9 @@ Compared to Zsh, Fish requires less configuration to achieve a great interactive
 
 ### Nushell vs PowerShell
 
-For Windows, I've chosen [Nushell](https://www.nushell.sh/) as it provides a more intuitive experience compared to PowerShell. Here are some key differences:
+For Windows, I've chosen [Nushell](https://www.nushell.sh/) as it provides a more intuitive experience compared to PowerShell. mention the object / data pipeline approaches. "Powershell done right. Then talk about the great completion functions, scripting language with examples and references. Then lastly - vs Fish for linux.
+
+Here are some examples of the more efficient syntax vs powershell :
 
 **Verbosity Comparison:**
 
@@ -108,7 +110,7 @@ While Nushell is still pre-1.0, it's already a compelling alternative for Window
    - Better handling of ANSI escape codes
    - Improved copy/paste functionality
 
-Compared to the old Command Prompt, Windows Terminal feels like stepping into the 21st century. The difference is especially noticeable when working with modern tools and shells.
+Compared to the old Command Prompt, Windows Terminal feels like stepping into the 21st century. The difference is especially noticeable when working with modern tools and shells. #TODO - mention cmder, ConEmu etc ... are they still around ?
 
 ### iTerm2 (macOS)
 [iTerm2](https://iterm2.com/) is my current choice on macOS with features like:

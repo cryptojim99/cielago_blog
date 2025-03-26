@@ -38,9 +38,31 @@ As an accomplished web developer with excellent design sense implement a search 
 
 Do Not hallucinate 
 
-## Template
+## Search Bar part 2
+
+25 march
+
+As an accomplished web developer with excellent design sense
+
+Can you move the search icon all the way to the left side, beside the Home link, and with the small vertical separator. 
+
+Then have the popup render in the middle of the screen - similar to the screenshot below.
 
 Do Not hallucinate 
+
+Time taken :
+Cost :
+
+## Template
+
+
+As an accomplished web developer with excellent design sense
+
+Do Not hallucinate 
+
+Time taken :
+Cost :
+
 # Scratch
 
 
